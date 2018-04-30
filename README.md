@@ -1,9 +1,9 @@
 # AutoEx
 帮助Android开发者从项目异常堆栈中，自动寻找Stack Overflow的回答。
 
-![http://img.shields.io/badge/API-14+-brightgreen.svg]()
-![http://img.shields.io/badge/size-9kb-brightgreen.svg]()
-![http://img.shields.io/badge/stackoverflow-+-brightgreen.svg]()
+
+
+![api+][api+]![size][size]![https://stackoverflow.com][stackoverflow]
 
 
 只需要添加一行代码，即可让你的项目在崩溃时，根据Log错误自动去Stack Overflow中寻找可供参考的答案。
@@ -67,7 +67,14 @@
 
 ---
 
-特别说明：
-为了保持精简干净不给开发者添麻烦，这个库没有依赖任何第三方库。(比如OKHttp、Gson等)纯粹的原生JAVA。
-AutoEx仅不到9kb的大小，希望能给开发者提升工作效率。
+**AutoEx**仅不到9kb的大小。为了保持精简干净不给开发者添麻烦，**AutoEx**放弃任何依赖第三方库。(比如OKHttp、Gson等)。
+所以你不用担心依赖冲突等问题。另外请保持手机是联网状态的。希望能给你带来方便。
+
+
+
+
+[api+]:http://img.shields.io/badge/API-14+-brightgreen.svg
+[size]:http://img.shields.io/badge/size-9kb-brightgreen.svg
+[stackoverflow]:http://img.shields.io/badge/stackoverflow-+-brightgreen.svg
+
 
