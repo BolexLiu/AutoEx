@@ -2,8 +2,11 @@
 帮助Android开发者从项目异常堆栈中，自动寻找Stack Overflow的回答。
 
 
+[![AutoEx][AutoExsvg]][AutoEx] [![api+svg][api+svg]][api+svg] [![sizesvg][sizesvg]][sizesvg]  [![stackoverflow][stackoverflowsvg]][stackoverflow]
 
-![api+][api+]![size][size]![https://stackoverflow.com][stackoverflow]
+
+
+<!-- [![api+][]][api+]![size][size]![https://stackoverflow.com][stackoverflow] -->
 
 
 只需要添加一行代码，即可让你的项目在崩溃时，根据Log错误自动去Stack Overflow中寻找可供参考的答案。
@@ -72,9 +75,13 @@
 
 
 
+[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.0-brightgreen.svg
+[AutoEx]:https://github.com/BolexLiu/AutoEx
 
-[api+]:http://img.shields.io/badge/API-14+-brightgreen.svg
-[size]:http://img.shields.io/badge/size-9kb-brightgreen.svg
-[stackoverflow]:http://img.shields.io/badge/stackoverflow-+-brightgreen.svg
+[api+svg]:http://img.shields.io/badge/API-14+-brightgreen.svg
+[sizesvg]:http://img.shields.io/badge/size-9kb-brightgreen.svg
+
+[stackoverflowsvg]:http://img.shields.io/badge/stackoverflow-+-brightgreen.svg
+[stackoverflow]:https://stackoverflow.com
 
 
