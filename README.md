@@ -1,6 +1,10 @@
 # AutoEx
 帮助Android开发者从项目异常堆栈中，自动寻找Stack Overflow的回答。
 
+![http://img.shields.io/badge/API-14+-brightgreen.svg]()
+![http://img.shields.io/badge/size-9kb-brightgreen.svg]()
+![http://img.shields.io/badge/stackoverflow-+-brightgreen.svg]()
+
 
 只需要添加一行代码，即可让你的项目在崩溃时，根据Log错误自动去Stack Overflow中寻找可供参考的答案。
 
