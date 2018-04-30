@@ -1,6 +1,5 @@
 # AutoEx
-帮助Android开发者从项目异常堆栈中，自动寻找Stack Overflow的回答。
-
+帮助Android开发者，让项目在崩溃时从异常堆栈中，自动寻找Stack Overflow的回答。
 
 [![AutoEx][AutoExsvg]][AutoEx] [![api+svg][api+svg]][api+svg] [![sizesvg][sizesvg]][sizesvg]  [![stackoverflow][stackoverflowsvg]][stackoverflow]
 
@@ -8,10 +7,9 @@
 
 <!-- [![api+][]][api+]![size][size]![https://stackoverflow.com][stackoverflow] -->
 
+项目崩溃后，你的LogCat日志会出现来自Stack Overflow的回答。
 
-只需要添加一行代码，即可让你的项目在崩溃时，根据Log错误自动去Stack Overflow中寻找可供参考的答案。
-
- **就像下面这样：**
+ **像下面这样：**
 
 ```
 ┌—————————————————————AutoEx——————————————————————
