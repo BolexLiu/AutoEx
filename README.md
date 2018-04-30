@@ -35,35 +35,29 @@
 
  - 1.根build.gradle添加仓库:
 ```
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+    repositories {maven { url 'https://jitpack.io' }}
+}
   ```
 
  - 2.添加dependency依赖
 
-  ```
-  	dependencies {
-	        implementation 'com.github.BolexLiu:AutoEx:v1.0.0'
-	}
-  ```
+```
+dependencies {
+    implementation 'com.github.BolexLiu:AutoEx:v1.0.0'
+}
+```
 
  - 3.Application初始化一行搞定
 
-  ```java
+```java
     AutoEx.apply(this);
-  ```
-
-
+```
 
 
 ## android support:
  - minSdkVersion 14
  - maxSdkVersion 26+
-
 
 
 ---
