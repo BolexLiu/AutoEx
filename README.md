@@ -1,9 +1,10 @@
 # AutoEx
 帮助Android开发者从项目异常堆栈中，自动寻找Stack Overflow的回答。
 
-只需要添加一行代码，即可让你的项目在崩溃时，自动更具Log错误去Stack Overflow中寻找可供参考的答案。
-就像下面这样：
 
+只需要添加一行代码，即可让你的项目在崩溃时，根据Log错误自动去Stack Overflow中寻找可供参考的答案。
+
+ **就像下面这样：**
 
 ```
 ┌—————————————————————AutoEx——————————————————————
@@ -23,8 +24,6 @@
 ├ 链接:https://stackoverflow.com/questions/48310838/xml-android-app-will-not-load-on-phone
 └—————————————————————AutoEx——————————————————————
 ```
-
-
 
 
 ### 用法
@@ -56,13 +55,15 @@
 
 
 
-## android Version support:
+## android support:
  - minSdkVersion 14
  - maxSdkVersion 26+
 
 
+
 ---
 
- 特别说明：
-为了保持精简干净不给开发者添麻烦，这个库没有依赖任何第三方库。(比如OKHttp、Gson等)纯粹的原生JAVA写的。
-它仅不到9kb的大小，希望能给开发者提升工作效率。
+特别说明：
+为了保持精简干净不给开发者添麻烦，这个库没有依赖任何第三方库。(比如OKHttp、Gson等)纯粹的原生JAVA。
+AutoEx仅不到9kb的大小，希望能给开发者提升工作效率。
+
