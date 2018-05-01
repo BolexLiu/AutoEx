@@ -44,7 +44,7 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.BolexLiu:AutoEx:v1.0.3'
+    implementation 'com.github.BolexLiu:AutoEx:v1.0.5'
 }
 ```
 
