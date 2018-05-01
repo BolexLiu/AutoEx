@@ -44,14 +44,25 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.BolexLiu:AutoEx:v1.0.5'
+    implementation 'com.github.BolexLiu:AutoEx:v1.0.6'
 }
 ```
 
  - 3.Application初始化一行搞定
 
 ```java
-   if (BuildConfig.DEBUG){AutoEx.apply(this);}
+ AutoEx.apply(this);
+```
+
+ 或者你也可以自己配参数
+```
+  /**
+     * @param mApp    Applicatin
+     * @param maxSize 最大提示答案数目
+     * @param tag     自定义日志 默认 AutoEx
+     * @param isDebug 是否开启调试 true为开启 false为关闭 默认开启
+     */
+    public static void apply(Context mApp, int maxSize, String tag, boolean isDebug)
 ```
 
 
@@ -62,12 +73,19 @@ dependencies {
 
 ---
 
+## 更新描述
+
+- 1.0.5 修复小米等手机直接被Kill，添加多进程
+- 1.0.6 最大提示数目、增加日志过滤、调试模式选择
+
+
+
 **AutoEx**仅不到9kb的大小。为了保持精简干净不给开发者添麻烦，**AutoEx**放弃依赖第三方库。(比如OKHttp、Gson等)。
 所以你不用担心依赖冲突等问题。另外请保持手机是联网状态的。希望能给你带来方便。
 
 
 
-[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.0-brightgreen.svg
+[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.6-brightgreen.svg
 [AutoEx]:https://github.com/BolexLiu/AutoEx
 
 [api+svg]:http://img.shields.io/badge/API-14+-brightgreen.svg

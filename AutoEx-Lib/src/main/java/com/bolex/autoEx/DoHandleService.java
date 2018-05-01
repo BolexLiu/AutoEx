@@ -55,11 +55,11 @@ import org.json.JSONObject;
                         log.append(SORRY);
                     }
                     log.append(LINE_END);
-                    Log.e(LOG_TAG, log.toString());
+                    log(log);
                 } catch (JSONException e) {
                     log.append(String.format(AUTO_ERROR, e.getMessage()));
                     log.append(LINE_END);
-                    Log.e(LOG_TAG, log.toString());
+                    log(log);
                 }
             }
 
@@ -69,8 +69,12 @@ import org.json.JSONObject;
                 log.append(LINE_START);
                 log.append(String.format(AUTO_ERROR, error));
                 log.append(LINE_END);
-                Log.e(LOG_TAG, log.toString());
+                log(log);
             }
         });
+    }
+
+    private void log(StringBuffer log) {
+        Log.e(AutoEx.tag, log.toString());
     }
 }
