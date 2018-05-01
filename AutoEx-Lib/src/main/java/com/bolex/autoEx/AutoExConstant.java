@@ -17,4 +17,8 @@ interface AutoExConstant {
     String JSON_ITEMS = "items";
     String JSON_LINK = "link";
     String JSON_TITLE = "title";
+
+    String ERROR_MSG = "ERROR_MSG";
+    String LOG_TAG = "AutoEx";
+    String MAX_SIZE = "MAX_SIZE";
 }
