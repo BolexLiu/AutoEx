@@ -1,5 +1,7 @@
 package com.bolex.test;
 
+import android.content.Intent;
+
 import com.bolex.autoEx.*;
 import com.bolex.autoEx.BuildConfig;
 
@@ -10,7 +12,7 @@ import com.bolex.autoEx.BuildConfig;
 public class Application extends android.app.Application {
     @Override
     public void onCreate() {
-        if (BuildConfig.DEBUG){AutoEx.apply(this);}
+        AutoEx.apply(this);
         super.onCreate();
     }
 }

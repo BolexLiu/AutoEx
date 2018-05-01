@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         //  AutoEx.apply(getApplication()); 更加推荐把AutoEx放在Application中初始化
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout mainView = (LinearLayout) findViewById(R.id.activity_main);
+       LinearLayout mainView = (LinearLayout) findViewById(R.id.activity_main);
 
     }
 }

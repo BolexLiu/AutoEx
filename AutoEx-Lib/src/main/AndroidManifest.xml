@@ -2,8 +2,8 @@
     package="com.bolex.autoEx">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <application android:supportsRtl="true">
-        <service android:name=".HandleService" />
+    <application  android:supportsRtl="true">
+        <service android:process=":AutoEx"  android:name="com.bolex.autoEx.HandleService" />
 
     </application>
 

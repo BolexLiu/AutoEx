@@ -37,7 +37,7 @@ public class AutoEx implements AutoExConstant {
             String errorMsg = getErrorMsg(ex);
             Intent intent = new Intent(mApp, HandleService.class);
             intent.putExtra(ERROR_MSG,errorMsg);
-            intent.putExtra(ERROR_MSG,errorMsg);
+            intent.putExtra(MAX_SIZE,maxSize);
             mApp.startService(intent);
             mUEH.uncaughtException(thread, ex);
         }

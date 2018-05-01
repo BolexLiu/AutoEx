@@ -13,7 +13,7 @@ import org.json.JSONObject;
  * Created by Bolex on 2018/5/2.
  */
 
- class HandleService extends Service implements AutoExConstant {
+ public class HandleService extends Service implements AutoExConstant {
 
     @Override
     public IBinder onBind(Intent intent) {
