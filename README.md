@@ -55,7 +55,7 @@ dependencies {
 ```
 
  或者你也可以自己配参数
-```
+```java
   /**
      * @param mApp    Applicatin
      * @param maxSize 最大提示答案数目
