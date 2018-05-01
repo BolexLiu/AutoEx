@@ -44,14 +44,14 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.BolexLiu:AutoEx:v1.0.0'
+    implementation 'com.github.BolexLiu:AutoEx:v1.0.1'
 }
 ```
 
  - 3.Application初始化一行搞定
 
 ```java
-    AutoEx.apply(this);
+   if (BuildConfig.DEBUG){AutoEx.apply(this);}
 ```
 
 
