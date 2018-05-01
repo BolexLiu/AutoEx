@@ -35,7 +35,7 @@ public class AutoEx implements AutoExConstant {
     Thread.UncaughtExceptionHandler handler = new Thread.UncaughtExceptionHandler() {
         public void uncaughtException(final Thread thread, final Throwable ex) {
             String errorMsg = getErrorMsg(ex);
-            Intent intent = new Intent(mApp, HandleService.class);
+            Intent intent = new Intent(mApp, DoHandleService.class);
             intent.putExtra(ERROR_MSG,errorMsg);
             intent.putExtra(MAX_SIZE,maxSize);
             mApp.startService(intent);

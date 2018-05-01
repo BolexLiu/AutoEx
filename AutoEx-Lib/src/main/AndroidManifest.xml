@@ -3,7 +3,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application  android:supportsRtl="true">
-        <service android:process=":AutoEx"  android:name="com.bolex.autoEx.HandleService" />
+        <service android:process=":AutoEx"  android:name="com.bolex.autoEx.DoHandleService" />
 
     </application>
 
