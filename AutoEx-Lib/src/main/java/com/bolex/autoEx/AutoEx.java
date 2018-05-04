@@ -25,16 +25,11 @@ public class AutoEx implements AutoExConstant {
      *
      */
     public static void apply() {
-        Class<?> clazz = null;
-        try {
-            clazz = Class.forName("android.app.ActivityThread");
-            Method method = clazz.getDeclaredMethod("currentApplication");
-            Application mApp = (Application) method.invoke(null);
-            apply(mApp, AutoEx.maxSize);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(getApp()!=null){
+            apply(getApp(), AutoEx.maxSize);
         }
     }
+
 
     /**
      * @param mApp Applicatin
@@ -102,4 +97,16 @@ public class AutoEx implements AutoExConstant {
         return message.substring(message.indexOf(":") + 2);
     }
 
+    private static Application getApp() {
+        Class<?> clazz = null;
+        try {
+            clazz = Class.forName("android.app.ActivityThread");
+            Method method = clazz.getDeclaredMethod("currentApplication");
+            Application mApp = (Application) method.invoke(null);
+            return mApp;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
