@@ -40,13 +40,12 @@ allprojects {
 }
   ```
 
- - 2.添加dependency依赖
+ - 2.添加dependency （低版本的Gradle可以使用 debugCompile releaseCompile）
 
 ```
 dependencies {
      debugImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib:v1.0.7' //debug包
      releaseImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.7' //release包
-     //低版本的Gradle可以使用 debugCompile releaseCompile 关键字
 }
 ```
 
