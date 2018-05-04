@@ -25,8 +25,9 @@ public class AutoEx implements AutoExConstant {
      *
      */
     public static void apply() {
-        if(getApp()!=null){
-            apply(getApp(), AutoEx.maxSize);
+        Application app = getApp();
+        if(app!=null){
+            apply(app, AutoEx.maxSize);
         }
     }
 
