@@ -1,1 +1,1 @@
-include ':app', ':AutoEx-Lib'
+include ':app', ':AutoEx-Lib', ':AutoEx-Lib-No-Op'

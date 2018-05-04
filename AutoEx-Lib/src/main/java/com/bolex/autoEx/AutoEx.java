@@ -1,7 +1,11 @@
 package com.bolex.autoEx;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 
 /**
@@ -16,6 +20,21 @@ public class AutoEx implements AutoExConstant {
     public static String tag = LOG_TAG;
     private boolean isDebug;
     private static volatile AutoEx autoEx;
+
+    /**
+     *
+     */
+    public static void apply() {
+        Class<?> clazz = null;
+        try {
+            clazz = Class.forName("android.app.ActivityThread");
+            Method method = clazz.getDeclaredMethod("currentApplication");
+            Application mApp = (Application) method.invoke(null);
+            apply(mApp, AutoEx.maxSize);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * @param mApp Applicatin

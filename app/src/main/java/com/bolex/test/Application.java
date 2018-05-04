@@ -10,7 +10,7 @@ import com.bolex.autoEx.*;
 public class Application extends android.app.Application {
     @Override
     public void onCreate() {
-        AutoEx.apply(this);
+        AutoEx.apply();
 // 可选参数  AutoEx.apply(this,4,"AutoExTag",true);
         super.onCreate();
     }
