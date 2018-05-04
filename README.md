@@ -44,19 +44,21 @@ allprojects {
 
 ```
 dependencies {
-    implementation 'com.github.BolexLiu:AutoEx:v1.0.6'
+     debugImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib:v1.0.7' //debug包
+     releaseImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.7' //release包
+     //低版本的Gradle可以使用 debugCompile releaseCompile 关键字
 }
 ```
 
  - 3.Application初始化一行搞定
 
 ```java
- AutoEx.apply(this);
+ AutoEx.apply();
 ```
 
- 或者你也可以自己配参数
+  或者你也可以自己配参数
 ```java
-  /**
+    /**
      * @param mApp    Applicatin
      * @param maxSize 最大提示答案数目
      * @param tag     自定义日志 默认 AutoEx
@@ -75,11 +77,11 @@ dependencies {
 
 ## 更新描述
 
-- 1.0.5 修复小米等手机直接被Kill，添加多进程
+- 1.0.5 修复小米等手机直接被Kill，添加多进程（感谢静心同学的测试）
 - 1.0.6 最大提示数目、增加日志过滤、调试模式选择
+- 1.0.7 增加无参构造、增加Rlease空包支持（感谢巴神）
 
-
-## 预备需求
+## 后续需求
 
 - 基于搜索引擎扩展结果，避免精准匹配的异常有时候出不来的问题。要考虑墙的问题(google? bing?)
 - 编译时gradle异常提示，目前只是运行时的，gradle取error的日志我试了一下是没问题的，做成插件就可以用了。等有空再折腾
@@ -92,7 +94,8 @@ dependencies {
 
 
 
-[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.6-brightgreen.svg
+
+[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.7-brightgreen.svg
 [AutoEx]:https://github.com/BolexLiu/AutoEx
 
 [api+svg]:http://img.shields.io/badge/API-14+-brightgreen.svg

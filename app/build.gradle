@@ -21,5 +21,6 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     testCompile 'junit:junit:4.12'
-    compile project(':AutoEx-Lib')
+    debugCompile project(':AutoEx-Lib')
+    releaseCompile project(':AutoEx-Lib-No-Op')
 }
