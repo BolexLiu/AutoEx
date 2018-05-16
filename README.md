@@ -49,7 +49,7 @@ dependencies {
 }
 ```
 
- - 初始化方式可选(建议放在在Application中)
+ - 初始化方式(选一种即可，建议放在Application中)
 
 ```java
  AutoEx.apply();//一行即可
