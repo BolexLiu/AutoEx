@@ -33,37 +33,30 @@
 
 ## 用法
 
- - 1.根build.gradle添加仓库:
+ - 根build.gradle:
 ```
 allprojects {
     repositories {maven { url 'https://jitpack.io' }}
 }
   ```
 
- - 2.添加dependency （低版本的Gradle可以使用 debugCompile releaseCompile）
+ - dependency （低版本Gradle使用 debugCompile releaseCompile）
 
 ```
 dependencies {
-     debugImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib:v1.0.7' //debug包
-     releaseImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.7' //release包
+     debugImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib:v1.0.8'
+     releaseImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.8'
 }
 ```
 
- - 3.Application初始化一行搞定
+ - 初始化方式可选(建议放在在Application中)
 
 ```java
- AutoEx.apply();
+ AutoEx.apply();//一行即可
 ```
 
-  或者你也可以自己配参数
 ```java
-    /**
-     * @param mApp    Applicatin
-     * @param maxSize 最大提示答案数目
-     * @param tag     自定义日志 默认 AutoEx
-     * @param isDebug 是否开启调试 true为开启 false为关闭 默认开启
-     */
-    public static void apply(Context mApp, int maxSize, String tag, boolean isDebug)
+ AutoEx.apply( mApp, maxSize, tag, isDebug)//Applicatin 答案数目 日志TAG 是否调试
 ```
 
 
@@ -79,6 +72,7 @@ dependencies {
 - 1.0.5 修复小米等手机直接被Kill，添加多进程（感谢静心同学的测试）
 - 1.0.6 最大提示数目、增加日志过滤、调试模式选择
 - 1.0.7 增加无参构造、增加Rlease空包支持（感谢巴神）
+- 1.0.8 对无法反射获取Context的机型给出日志提示
 
 ## 后续需求
 
@@ -88,13 +82,13 @@ dependencies {
 
 
 
-**AutoEx**仅不到9kb的大小。为了保持精简干净不给开发者添麻烦，**AutoEx**放弃依赖第三方库。(比如OKHttp、Gson等)。
-所以你不用担心依赖冲突等问题。另外请保持手机是联网状态的。希望能给你带来方便。欢迎pr，么么哒。
+**AutoEx**只有9kb的大小。为了保持精简干净不给开发者添麻烦，**AutoEx**没有依赖第三方库。(比如OKHttp、Gson等)。
+所以你不用担心依赖冲突等问题。另外请保持手机是联网状态的。希望能给你带来方便。
 
 
 
 
-[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.7-brightgreen.svg
+[AutoExsvg]:http://img.shields.io/badge/AutoEx-v1.0.8-brightgreen.svg
 [AutoEx]:https://github.com/BolexLiu/AutoEx
 
 [api+svg]:http://img.shields.io/badge/API-14+-brightgreen.svg

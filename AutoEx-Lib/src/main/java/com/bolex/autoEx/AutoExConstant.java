@@ -21,4 +21,5 @@ interface AutoExConstant {
     String ERROR_MSG = "ERROR_MSG";
     String LOG_TAG = "AutoEx";
     String MAX_SIZE = "MAX_SIZE";
+    String ANDROID_P_ERROR = "由于Android版本差异化导致反射不可用，AutoEx.apply()请调用多个参数的构造函传入ConText对象";
 }
