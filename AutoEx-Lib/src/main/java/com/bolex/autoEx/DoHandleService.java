@@ -32,35 +32,8 @@ import org.json.JSONObject;
         HttpUtil.doGet(API.SEARCH_URL + API.PAGESIZE + maxSize + API.Body + errorMsg.replace(" ", "%20"), new HttpUtil.HResponse() {
             @Override
             public void onFinish(String msg) {
-                StringBuffer log = new StringBuffer();
-                log.append(LINE_START);
-                try {
-                    JSONObject stackoverflowData = new JSONObject(msg);
-                    JSONArray items = stackoverflowData.getJSONArray(JSON_ITEMS);
-                    int length = items.length();
-                    if (length > 0) {
-                        log.append(String.format(AUTO_ERROR_TYPE, errorMsg));
-                        log.append(String.format(AUTO_RECOMMEND, length));
-                        log.append(MI_LINE);
-                        for (int i = 0; i < length; i++) {
-                            JSONObject item = (JSONObject) items.get(i);
-                            String link = item.getString(JSON_LINK);
-                            String title = item.getString(JSON_TITLE);
-                            log.append(String.format(AUTO_LINKS, title, link));
-                            if (i < length - 1) {
-                                log.append(MI_LINE);
-                            }
-                        }
-                    } else {
-                        log.append(SORRY);
-                    }
-                    log.append(LINE_END);
-                    log(log);
-                } catch (JSONException e) {
-                    log.append(String.format(AUTO_ERROR, e.getMessage()));
-                    log.append(LINE_END);
-                    log(log);
-                }
+                resolveLog(msg, errorMsg);
+               stopSelf();
             }
 
             @Override
@@ -70,8 +43,41 @@ import org.json.JSONObject;
                 log.append(String.format(AUTO_ERROR, error));
                 log.append(LINE_END);
                 log(log);
+                stopSelf();
             }
         });
+    }
+
+    private void resolveLog(String msg, String errorMsg) {
+        StringBuffer log = new StringBuffer();
+        log.append(LINE_START);
+        try {
+            JSONObject stackoverflowData = new JSONObject(msg);
+            JSONArray items = stackoverflowData.getJSONArray(JSON_ITEMS);
+            int length = items.length();
+            if (length > 0) {
+                log.append(String.format(AUTO_ERROR_TYPE, errorMsg));
+                log.append(String.format(AUTO_RECOMMEND, length));
+                log.append(MI_LINE);
+                for (int i = 0; i < length; i++) {
+                    JSONObject item = (JSONObject) items.get(i);
+                    String link = item.getString(JSON_LINK);
+                    String title = item.getString(JSON_TITLE);
+                    log.append(String.format(AUTO_LINKS, title, link));
+                    if (i < length - 1) {
+                        log.append(MI_LINE);
+                    }
+                }
+            } else {
+                log.append(SORRY);
+            }
+            log.append(LINE_END);
+            log(log);
+        } catch (JSONException e) {
+            log.append(String.format(AUTO_ERROR, e.getMessage()));
+            log.append(LINE_END);
+            log(log);
+        }
     }
 
     private void log(StringBuffer log) {

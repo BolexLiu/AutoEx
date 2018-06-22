@@ -3,8 +3,8 @@ package com.bolex.autoEx;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 
 public class AutoEx implements AutoExConstant {
 
-    private Context mApp;
+    private static Context mApp;
     private Thread.UncaughtExceptionHandler mUEH;
     public static int maxSize = 4;
     public static String tag = LOG_TAG;
@@ -25,9 +25,11 @@ public class AutoEx implements AutoExConstant {
      *
      */
     public static void apply() {
-        Application app = getApp();
-        if(app!=null){
+        Context app = getApp();
+        if (app != null) {
             apply(app, AutoEx.maxSize);
+        } else {
+            Log.e(tag, AutoEx.class.getName(), new RuntimeException(ANDROID_P_ERROR));
         }
     }
 
@@ -67,8 +69,13 @@ public class AutoEx implements AutoExConstant {
             return;
         }
         if (autoEx == null) {
-            autoEx = new AutoEx();
-            autoEx.init(mApp, maxSize, tag, isDebug);
+            synchronized (AutoEx.class) {
+                if (autoEx == null) {
+                    autoEx = new AutoEx();
+                    autoEx.init(mApp, maxSize, tag, isDebug);
+                }
+            }
+
         }
     }
 
@@ -98,16 +105,19 @@ public class AutoEx implements AutoExConstant {
         return message.substring(message.indexOf(":") + 2);
     }
 
-    private static Application getApp() {
-        Class<?> clazz = null;
-        try {
-            clazz = Class.forName("android.app.ActivityThread");
-            Method method = clazz.getDeclaredMethod("currentApplication");
-            Application mApp = (Application) method.invoke(null);
+    private static Context getApp() {
+        if (mApp != null) {
             return mApp;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            try {
+                Class<?> clazz = Class.forName("android.app.ActivityThread");
+                Method method = clazz.getDeclaredMethod("currentApplication");
+                Application mApp = (Application) method.invoke(null);
+                return mApp;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
         }
-        return null;
     }
 }
