@@ -33,28 +33,28 @@
 
 ## 用法
 
- - 根build.gradle:
+ - root build.gradle:
 ```
 allprojects {
     repositories {maven { url 'https://jitpack.io' }}
 }
   ```
 
- - dependency （低版本Gradle使用 debugCompile releaseCompile）
+ - dependency （low version gradle: debugCompile releaseCompile）
 
 ```
 dependencies {
      debugImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib:v1.0.8'
-     releaseImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.8'
+     releaseImplementation 'com.github.BolexLiu.AutoEx:AutoEx-Lib-No-Op:v1.0.8' //release为空实现
 }
 ```
 
- - 初始化方式(任选一种，放在Application中)
+ - 初始化方式(Application)
 
 ```java
  AutoEx.apply();//一行即可
 ```
-
+或者
 ```java
  AutoEx.apply( mApp, maxSize, tag, isDebug)//Applicatin 答案数目 日志TAG 是否调试
 ```
@@ -71,7 +71,7 @@ dependencies {
 
 - 1.0.5 修复小米等手机直接被Kill，添加多进程（感谢静心同学的测试）
 - 1.0.6 最大提示数目、增加日志过滤、调试模式选择
-- 1.0.7 增加无参构造、增加Rlease空包支持（感谢巴神）
+- 1.0.7 增加无参构造、增加release空包支持（感谢巴神）
 - 1.0.8 对无法反射获取Context的机型给出日志提示
 - 增加AutoEx-Gradle插件版，对编译时报错支持提示，不过这个没什么太大用处
 
@@ -82,9 +82,7 @@ dependencies {
 
 
 
-**AutoEx**只有9kb的大小。为了保持精简干净不给开发者添麻烦，**AutoEx**没有依赖第三方库。(比如OKHttp、Gson等)。
-所以你不用担心依赖冲突等问题。另外请保持手机是联网状态的。希望能给你带来方便。
-
+**AutoEx**不足10kb。无脏依赖关系，另外请保持手机是联网状态的。
 
 
 
