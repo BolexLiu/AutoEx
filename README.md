@@ -80,6 +80,10 @@ dependencies {
 
 - 基于搜索引擎扩展结果，避免精准匹配的异常有时候出不来的问题。要考虑墙的问题(google? bing?)
 
+## 修复说明
+
+- 将 Stack Overflow API 地址从 `http://api.stackexchange.com/2.2/` 升级为 `https://api.stackexchange.com/2.3/`，修复因 HTTP 协议和旧版 API 导致无法正常获取结果的问题。
+
 
 
 
